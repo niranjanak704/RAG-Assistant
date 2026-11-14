@@ -42,26 +42,46 @@ Evaluated on a 235-page university syllabus using 20 test questions.
 
 ![alt text](project_structure.png)
 
-## Quick start
+## Quick Start
 
-Requires Python 3.10 or newer and a free Gemini API key from https://aistudio.google.com/apikey.
+### Prerequisites
+- Python 3.10+
+- Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey)
 
+### 1. Clone the repository
+```bash
+git clone <repository-url>
+cd <project-folder>
+```
+
+### 2. Create and activate a virtual environment
+```bash
 python -m venv .venv
-.venv\Scripts\Activate.ps1        # macOS/Linux: source .venv/bin/activate
+.venv\Scripts\Activate.ps1
+```
+
+### 3. Install dependencies
+```bash
 pip install -r requirements.txt
-copy .env.example .env            # macOS/Linux: cp .env.example .env
+```
 
-Add your key and model names to .env:
+### 4. Configure environment variables
 
+Copy `.env.example` to `.env` and add your Gemini API key:
+
+```env
 GEMINI_API_KEY=your_key_here
 LLM_MODEL=gemini-3.5-flash
 LLM_FALLBACK_MODELS=gemini-3.6-flash,gemini-3.5-flash-lite,gemini-3.1-flash-lite
 EMBEDDING_PROVIDER=local
+```
 
-Gemini model names change over time. If you see a "model not found" error, check the current list at https://ai.google.dev/gemini-api/docs/models.
-
-## Run the application
+### 5. Run the application
+```bash
 python -m streamlit run app.py
+```
+
+**Note:** The first run downloads the embedding model (approximately 130 MB).
 
 ## About the Evaluation
 
@@ -78,3 +98,5 @@ Copy the syllabus to `data/uploads/syllabus.pdf`, then run:
 ```bash
 python evaluation/evaluate.py --check
 python evaluation/evaluate.py
+
+
