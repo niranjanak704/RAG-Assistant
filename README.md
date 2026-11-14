@@ -4,7 +4,10 @@ Ask questions about any text-based PDF and receive answers grounded in the docum
 
 **Tech Stack:** Python | FAISS | BGE Embeddings | Gemini API | Streamlit
 
-![alt text](image.png)   ![alt text](image-1.png)
+![alt text](image.png)   
+
+![alt text](image-1.png)
+
 ![alt text](image-2.png)
 
 ## Results
